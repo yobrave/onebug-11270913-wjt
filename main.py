@@ -15,7 +15,7 @@ out_dir.mkdir(parents=True, exist_ok=True)
 (out_dir / "entry.txt").write_text(line, encoding="utf-8")
 
 verdict = {
-    "valid": 1 <= len(line) <= BOUND,
+    "valid": bool(line) and len(line) <= BOUND,
     "chars": len(line),
     "artifact": "entry.txt",
 }
